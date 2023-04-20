@@ -1,0 +1,44 @@
+{% load static%}
+
+<!doctype html>
+<html lang="en" class="h-full bg-white">
+    <head>
+        <!-- Site wide meta tags -->
+        {% block meta %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!--SEO meta tags-->
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        {% endblock %}
+        <!-- Favicon -->
+
+        <!-- Site wide CSS -->
+        {% block core_css %}
+        <link rel="stylesheet" href="{% static 'css/output.css' %}">
+        {% endblock %}
+        <!-- Additional CSS, will be page specific-->
+        {% block extra_css %}
+        {% endblock %}
+        <!-- Site wide Javascript links. -->
+        {% block core_js %}
+        {% endblock %}
+        <!-- Additional Javascript links, will be page specific -->
+        {% block extra_js %}
+        {% endblock %}
+
+        <title>Winos Den | {% block head_title %}{% endblock %}</title>
+    </head>
+    <body class="h-full">
+        <div style="color:red;">
+        
+        </div>
+        <!-- Page content -->
+        {% block content%}
+        {% endblock %}
+        <!--Javascript to load at the end of body. -->
+        {% block postload_js %}
+        {% endblock %}
+    </body>
+</html>
