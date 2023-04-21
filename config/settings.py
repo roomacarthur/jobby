@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import environ
 import psycopg2
+import os
 
 # Initialise environment variables
 env = environ.Env()
@@ -91,6 +92,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # `allauth` needs this from django
                 'django.template.context_processors.request',
+                # MEDIA_URL requirement.
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -157,6 +160,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR/'static']
 STATIC_ROOT = 'static_root'
 
+# media fodler
+MEDIA_URL = '/media/'
+MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'media')]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
